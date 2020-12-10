@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Input extends Component {
-    constructor(props) {
-        super()
-        this.state = {
+function Input (props) {
 
-        };
-    }
 
-    render() {
         return(
             <div>
                 <label className="filterText" htmlFor="fruit-filter">Filter These Fruits: </label>
-                <input type="text" value={this.props.value} onChange={this.props.onChange}name="fruit-filter" />
+                <input type="text" value={props.value} onChange={props.onChange}name="fruit-filter" />
             </div>
         );
     }
-}
+
 
 export default Input;
