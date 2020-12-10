@@ -6,27 +6,22 @@ import List from './List';
 import Input from './Input';
 
 function FruitContainer(props) {
-        const [fruitsToDisplay, setfruitsToDisplay] = useState(props.fruits);
-        const [filterValue, setfilterValue] = useState('')
-        console.log('---- state ----')
-        console.log(fruitsToDisplay);
-        console.log('---- props ----')
-        console.log(props.fruits)
+        const [fruitsToDisplay, setFruitsToDisplay] = useState(props.fruits);
+        const [filterValue, setFilterValue] = useState('')
+        // console.log('---- state ----')
+        // console.log(fruitsToDisplay);
+        // console.log('---- props ----')
+        // console.log(props.fruits)
 
-        function handleFilterChange(e) {
+        const handleFilterChange = (e) => {
             e.preventDefault();
-            let filterValue = e.target.value;
-            // Remove the fruits that don't contain the filter value
-            const filteredFruitList = this.props.fruits.filter(fruit => {
-                return fruit.toLowerCase().includes(filterValue.toLowerCase())
-    
-                // Same thing above for filteredFruitList
-                // if (fruit.toLowerCase() === filterValue.toLowerCase()) {
-                //     return true;
-                // }
+            let filteredValue = e.target.value;
+            const filteredFruitList = props.fruits.filter((fruit) => {
+                return fruit.toLowerCase().includes(filteredValue.toLowerCase())
             })
     
-            this.setState({ fruitsToDisplay: filteredFruitList, filterValue})
+            setFruitsToDisplay(filteredFruitList)
+            setFilterValue(filteredValue)
         }
         
         return(
